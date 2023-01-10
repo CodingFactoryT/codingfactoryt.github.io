@@ -1,11 +1,11 @@
 function aboutmeButton_Clicked(){
-    location.assign('./aboutme/index.html');
+    location.assign('./aboutme/');
 }
 
 function contactButton_Clicked(){
-    location.assign('./contact/index.html');
+    location.assign('./contact/');
 }
 
 function projectsButton_Clicked(){
-    location.assign('./projects/index.html');
+    location.assign('./projects/');
 }
