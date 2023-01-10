@@ -1,0 +1,14 @@
+body{
+    background-color: #192735;
+}
+
+.redirectButton{
+    margin: 10%;
+    width: 100px;
+    height: 100px;
+}
+
+#buttonContainer{
+    align-content: center;
+    margin: 15%;
+}

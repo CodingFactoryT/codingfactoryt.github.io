@@ -1,1 +1,0 @@
-alert('Hello project.js!');
