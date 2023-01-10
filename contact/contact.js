@@ -1,0 +1,1 @@
+alert('Hello contact.js!');
