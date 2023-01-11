@@ -1,5 +1,6 @@
 body{
     background-color: #192735;
+    overflow: hidden;
 }
 
 .redirectButton{
@@ -12,4 +13,60 @@ body{
 #buttonContainer{
     align-content: center;
     margin: 15%;
+}
+
+#logoContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#logoLeftArrowImage{
+    position: relative;
+    right: 1%;
+    animation: 2s logoLeftArrowMovement;
+    animation-fill-mode: forwards;
+}
+
+#logoTextImage{
+    position: absolute;
+}
+
+#logoRightArrowImage{
+    position: relative;
+    left: 1%;
+    animation: 2s logoRightArrowMovement;
+    animation-fill-mode: forwards;
+}
+
+@keyframes logoLeftArrowMovement {
+    0%{
+        opacity: 0%;
+        top: 40%;
+    }
+    50%{
+        opacity: 100%;
+        top: 0%;
+        right: 1%;
+    }
+    100%{
+        right: 13%;
+    }
+}
+
+@keyframes logoRightArrowMovement {
+    0%{
+        opacity: 0%;
+        top: 40%;
+    }
+    50%{
+        opacity: 100%;
+        top: 0%;
+        left: 1%;
+    }
+    100%{
+        left: 13%;
+    }
 }
