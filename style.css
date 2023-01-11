@@ -28,10 +28,12 @@ body{
     right: 1%;
     animation: 2s logoLeftArrowMovement;
     animation-fill-mode: forwards;
+    width: 3%;
 }
 
 #logoTextImage{
     position: absolute;
+    width: 25%;
 }
 
 #logoRightArrowImage{
@@ -39,6 +41,7 @@ body{
     left: 1%;
     animation: 2s logoRightArrowMovement;
     animation-fill-mode: forwards;
+    width: 3%;
 }
 
 @keyframes logoLeftArrowMovement {
