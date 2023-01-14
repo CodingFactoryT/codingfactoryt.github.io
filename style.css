@@ -1,5 +1,6 @@
 body{
-    background-color: #192735;
+    --background-color : #192735;
+    background-color: var(--background-color);
     overflow: hidden;
 }
 
@@ -31,9 +32,27 @@ body{
     width: 3%;
 }
 
-#logoTextImage{
+#logoText{
     position: absolute;
-    width: 25%;
+    color: white;
+    font-family: sans-serif;
+    font-size: 3.5vw;
+    left: 50%;
+    animation: textMovement 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#logoText::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    background-color: var(--background-color);
+    animation: textReveal 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
 #logoRightArrowImage{
@@ -70,6 +89,24 @@ body{
         left: 1%;
     }
     100%{
-        left: 13%;
+        left: 13.5%;
+    }
+}
+
+@keyframes textMovement {
+    from{
+        left: 50%;
+    }   
+    to{
+        left: 37.5%;
+    } 
+}
+
+@keyframes textReveal {
+    from{
+        left: 0%;
+    }
+    to{
+        left: 100%;
     }
 }
