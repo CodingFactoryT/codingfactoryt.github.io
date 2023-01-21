@@ -16,6 +16,10 @@ body{
     margin: 15%;
 }
 
+#contentContainer{
+    overflow: hidden;
+}
+
 #logoContainer{
     position: relative;
     display: flex;
