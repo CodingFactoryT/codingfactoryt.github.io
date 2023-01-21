@@ -29,15 +29,12 @@ body{
     right: 1%;
     animation: 2s logoLeftArrowMovement;
     animation-fill-mode: forwards;
-    width: 3%;
 }
 
 #logoText{
     position: absolute;
     color: white;
     font-family: sans-serif;
-    font-size: 3.5vw;
-    left: 50%;
     animation: textMovement 1s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
@@ -60,46 +57,6 @@ body{
     left: 1%;
     animation: 2s logoRightArrowMovement;
     animation-fill-mode: forwards;
-    width: 3%;
-}
-
-@keyframes logoLeftArrowMovement {
-    0%{
-        opacity: 0%;
-        top: 40%;
-    }
-    50%{
-        opacity: 100%;
-        top: 0%;
-        right: 1%;
-    }
-    100%{
-        right: 13%;
-    }
-}
-
-@keyframes logoRightArrowMovement {
-    0%{
-        opacity: 0%;
-        top: 40%;
-    }
-    50%{
-        opacity: 100%;
-        top: 0%;
-        left: 1%;
-    }
-    100%{
-        left: 13.5%;
-    }
-}
-
-@keyframes textMovement {
-    from{
-        left: 50%;
-    }   
-    to{
-        left: 37.5%;
-    } 
 }
 
 @keyframes textReveal {
@@ -108,5 +65,107 @@ body{
     }
     to{
         left: 100%;
+    }
+}
+
+@media (orientation: landscape) {
+    #logoText {
+        font-size: 3.5vw;
+    }
+
+    #logoLeftArrowImage {
+        width: 3%;
+    }
+
+    #logoRightArrowImage {
+        width: 3%;
+    }
+
+    @keyframes logoLeftArrowMovement {
+        0%{
+            opacity: 0%;
+            top: 40%;
+        }
+        50%{
+            opacity: 100%;
+            top: 0%;
+            right: 1%;
+        }
+        100%{
+            right: 14%;
+        }
+    }
+    
+    @keyframes logoRightArrowMovement {
+        0%{
+            opacity: 0%;
+            top: 40%;
+        }
+        50%{
+            opacity: 100%;
+            top: 0%;
+            left: 1%;
+        }
+        100%{
+            left: 14%;
+        }
+    }
+    
+    @keyframes textMovement {
+        from{
+            left: 50%;
+        }   
+        to{
+            left: 37.5%;
+        } 
+    }
+}
+
+@media (orientation: portrait) {
+    #logoText {
+        font-size: 9.5vw;
+    }
+
+    #logoLeftArrowImage, #logoRightArrowImage {
+        width: 7%;
+    }
+
+    @keyframes logoLeftArrowMovement {
+        0%{
+            opacity: 0%;
+            top: 40%;
+        }
+        50%{
+            opacity: 100%;
+            top: 0%;
+            right: 1%;
+        }
+        100%{
+            right: 37%;
+        }
+    }
+    
+    @keyframes logoRightArrowMovement {
+        0%{
+            opacity: 0%;
+            top: 40%;
+        }
+        50%{
+            opacity: 100%;
+            top: 0%;
+            left: 1%;
+        }
+        100%{
+            left: 37%;
+        }
+    }
+    
+    @keyframes textMovement {
+        from{
+            margin-left: 70%;
+        }   
+        to{
+            margin-left: 0%
+        } 
     }
 }
