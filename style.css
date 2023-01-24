@@ -1,23 +1,7 @@
 body{
     --background-color : #192735;
     background-color: var(--background-color);
-    overflow: hidden;
-}
-
-.redirectButton{
-    margin: 10%;
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-}
-
-#buttonContainer{
-    align-content: center;
-    margin: 15%;
-}
-
-#contentContainer{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #logoContainer{
