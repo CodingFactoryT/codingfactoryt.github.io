@@ -1,9 +1,23 @@
+const pixelsPerDay = 5;
+const timeline = document.getElementById("timeline");
 
 window.onload = async function() {
+    const now = new Date();
+    const timelineHeight = getPixelDistanceToStartingDate(now, pixelsPerDay) * 1.5;
+    timeline.style.height = timelineHeight + 'px';
     const repoMap = await getSortedRepositories();
+
+    let alignment = 'right';
+
     repoMap.forEach((value, key) => {
         console.log(value[1], getPixelDistanceToStartingDate(value[0], 1));
-    })
+        appendProjectToTimeline(key, value[1], getPixelDistanceToStartingDate(value[0], pixelsPerDay),alignment);
+        if(alignment === 'right'){
+            alignment = 'left';
+        } else {
+            alignment = 'right';
+        }
+    });
 }
 
 function getSortedRepositories(){
@@ -40,7 +54,7 @@ function getSortedRepositories(){
     });
 }
 
-function getPixelDistanceToStartingDate(date , pixelsPerDay){
+function getPixelDistanceToStartingDate(date, pixelsPerDay){
     const startingDate = new Date(Date.UTC(2022, 0, 1));
 
     date = new Date(date);
@@ -52,4 +66,17 @@ function getPixelDistanceToStartingDate(date , pixelsPerDay){
     const diff = Math.abs(startingDate.getTime() - date.getTime());
     const diffInDays = diff / (1000 * 60 * 60 * 24);
     return diffInDays * pixelsPerDay;
+}
+
+function appendProjectToTimeline(projectName, dateCreated, offset, alignment) {
+    timeline.innerHTML += `
+        <div class="timelineEntry" style="top: ${offset}px">
+            <div class="timelineEntryContainer ${alignment}AlignedEntry">
+                <div class="horizontalLine">
+                    <div class="projectName ${alignment}AlignedText">${projectName}</div>
+                    <div class="dateCreated ${alignment}AlignedText">${dateCreated}</div>
+                </div>
+            </div>
+        </div>
+    `;
 }
