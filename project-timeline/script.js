@@ -10,7 +10,6 @@ window.onload = async function() {
     let alignment = 'right';
 
     repoMap.forEach((value, key) => {
-        console.log(value[1], getPixelDistanceToStartingDate(value[0], 1));
         appendProjectToTimeline(key, value[1], getPixelDistanceToStartingDate(value[0], pixelsPerDay),alignment);
         if(alignment === 'right'){
             alignment = 'left';

@@ -22,8 +22,8 @@ body {
     position: relative;
     transform: translateY(-50%);
     top: 50%;
-    width: 30vw;
     height: 100%;
+    display: inline-block;
 }
 
 .leftAlignedEntry {
@@ -35,33 +35,39 @@ body {
 }
 
 .projectName {
-    position: absolute;
+    position: relative;
     font-size: 2vw;
-    bottom: 200%;
     color: white;
+    bottom: 40px;
 }
 
 .dateCreated{
-    position: absolute;
+    position: relative;
     font-size: 1.5vw;
-    top: 200%;
     color: white;
+    top: -20px;
 }
 
 .horizontalLine {
     position: relative;
     transform: translateY(-50%);
     top: 50%;
-    width: 100%;
+    width: max-content;
     height: 10px;
     background-color: cadetblue;
     border-radius: 10px;
 }
 
 .rightAlignedText {
-    right: 2%;
+    position: relative;
+    padding-left: 60px;
+    padding-right: 10px;
+    text-align: right;
 }
 
 .leftAlignedText {
-    left: 2%;
+    position: relative;
+    padding-right: 60px;
+    padding-left: 10px;
+    text-align: left;
 }
