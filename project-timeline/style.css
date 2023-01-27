@@ -4,18 +4,19 @@ body {
 
 #timeline {
     margin: 20px auto;
-    width: 20px;
+    width: 1%;
     background: linear-gradient(66deg, rgba(5,109,187,1) 0%, rgba(0,212,255,1) 100%);;
     border-radius: 10px;
 }
 
 .timelineEntry {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 250%;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: cadetblue;
-    margin-left: -50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .timelineEntryContainer {
@@ -35,39 +36,43 @@ body {
 }
 
 .projectName {
-    position: relative;
+    position: absolute;
     font-size: 2vw;
     color: white;
-    bottom: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    bottom: 2.5vw;
 }
 
 .dateCreated{
-    position: relative;
+    position: absolute;
     font-size: 1.5vw;
     color: white;
-    top: -20px;
+    display: inline-block;
+    white-space: nowrap;
+    top: -1.5vw;
 }
 
 .horizontalLine {
     position: relative;
     transform: translateY(-50%);
     top: 50%;
-    width: max-content;
-    height: 10px;
+    height: 25%;
     background-color: cadetblue;
     border-radius: 10px;
+    text-align: justify;
 }
 
 .rightAlignedText {
     position: relative;
-    padding-left: 60px;
-    padding-right: 10px;
-    text-align: right;
+    padding-left: 6vw;
+    padding-right: 1vw;
+    float: right;
 }
 
 .leftAlignedText {
     position: relative;
-    padding-right: 60px;
-    padding-left: 10px;
-    text-align: left;
+    padding-right: 6vw;
+    padding-left: 1vw;
+    float: left;
 }
