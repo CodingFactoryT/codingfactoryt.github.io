@@ -25,6 +25,7 @@ body{
     animation: textMovement 1s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
+    text-decoration: none;
 }
 
 #logoText::before{

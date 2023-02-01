@@ -10,13 +10,38 @@ window.onload = async function() {
     let alignment = 'right';
 
     repoMap.forEach((value, key) => {
-        appendProjectToTimeline(key, value[1], getPixelDistanceToStartingDate(value[0], pixelsPerDay),alignment);
+        appendProjectToTimeline(key, value[1], getPixelDistanceToStartingDate(value[0], pixelsPerDay), alignment);
         if(alignment === 'right'){
             alignment = 'left';
         } else {
             alignment = 'right';
         }
     });
+
+    const appearOptions = {
+        rootMargin: "-50px 0px -50px 0px"
+    }
+
+    const timelineEntryObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            let alignment = "right";
+            if(entry.target.classList.contains("leftAligned")){
+                alignment = "left";
+            }
+
+            if(entry.isIntersecting){
+                entry.target.classList.add(`${alignment}ElementShown`);
+                console.log("Make visible");
+            } else{
+                entry.target.classList.remove(`${alignment}ElementShown`);
+                console.log("hide");
+            }
+        });
+    }, appearOptions);
+
+    const elements = document.querySelectorAll(".timelineEntry");
+    elements.forEach((element) => timelineEntryObserver.observe(element));
+
 }
 
 function getSortedRepositories(){
@@ -67,9 +92,9 @@ function getPixelDistanceToStartingDate(date, pixelsPerDay){
     return diffInDays * pixelsPerDay;
 }
 
-function appendProjectToTimeline(projectName, dateCreated, offset, alignment) {
+function appendProjectToTimeline(projectName, dateCreated, offset, alignment) { //class right-/leftAligned is only for the js script and is not used to style anything
     timeline.innerHTML += `
-        <div class="timelineEntry" style="top: ${offset}px">
+        <div class="timelineEntry ${alignment}Aligned" style="top: ${offset}px">
             <div class="timelineEntryContainer ${alignment}AlignedEntry">
                 <div class="horizontalLine">
                     <div class="projectName ${alignment}AlignedText">${projectName}</div>

@@ -76,3 +76,51 @@ body {
     padding-left: 1vw;
     float: left;
 }
+
+.rightElementShown {
+    animation: 0.5s showRightElement;
+    animation-fill-mode: forwards;
+}
+
+.leftElementShown {
+    animation: 0.5s showLeftElement;
+    animation-fill-mode: forwards;
+}
+
+.rightElementHidden {
+    animation: 0.5s showRightElement;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-in;
+}
+
+.leftElementHidden {
+    animation: 0.5s showLeftElement;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-in;
+}
+
+@keyframes showRightElement {
+    from{
+        opacity: 0;
+        transform: translateX(10vw);
+        filter: blur(3px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes showLeftElement {
+    from{
+        opacity: 0;
+        transform: translateX(-20vw);
+        filter: blur(3px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(-50%);
+    }
+}
