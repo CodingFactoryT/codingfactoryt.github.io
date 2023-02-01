@@ -19,7 +19,7 @@ window.onload = async function() {
     });
 
     const appearOptions = {
-        rootMargin: "-50px 0px -50px 0px"
+        rootMargin: "-75px 0px -75px 0px"
     }
 
     const timelineEntryObserver = new IntersectionObserver((entries) => {
