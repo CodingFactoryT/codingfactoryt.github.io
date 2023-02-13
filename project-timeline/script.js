@@ -41,7 +41,6 @@ window.onload = async function() {
 
     const elements = document.querySelectorAll(".timelineEntry");
     elements.forEach((element) => timelineEntryObserver.observe(element));
-
 }
 
 function getSortedRepositories(){
