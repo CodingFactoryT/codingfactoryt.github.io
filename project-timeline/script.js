@@ -3,9 +3,19 @@ const timeline = document.getElementById("timeline");
 
 window.onload = async function() {
     const now = new Date();
+    const formattedNowDate = now.toLocaleString('default', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    }).replace('/,/g', '.');
+    document.getElementById("nowDate").textContent = formattedNowDate;
+
     const timelineHeight = getPixelDistanceToStartingDate(now, pixelsPerDay) * 1.5;
+    console.log(timelineHeight);
     timeline.style.height = timelineHeight + 'px';
     const repoMap = await getSortedRepositories();
+
+    repoMap.set('', [now, '']);
 
     let alignment = 'right';
 
@@ -62,10 +72,6 @@ function getSortedRepositories(){
                         month: '2-digit',
                         year: 'numeric'
                     }).replace('/,/g', '.');
-                    const repoCreationDateParts = formattedRepoCreationDate.split('.');
-                    const day = parseInt(repoCreationDateParts[0]);
-                    const month = parseInt(repoCreationDateParts[1]);
-                    const year = parseInt(repoCreationDateParts[2]);
                     repoMap.set(repoName, [repoCreationDate, formattedRepoCreationDate]);
                 });
                 resolve(repoMap);
@@ -92,10 +98,18 @@ function getPixelDistanceToStartingDate(date, pixelsPerDay){
 }
 
 function appendProjectToTimeline(projectName, dateCreated, offset, alignment) { //class right-/leftAligned is only for the js script and is not used to style anything
+    let lineColor = 'cadetblue';
+    let dotColor = 'cadetblue';
+
+    if(projectName === '') {
+        lineColor = 'transparent';
+        dotColor = 'rgba(5,109,187,1)';
+    }
+
     timeline.innerHTML += `
-        <div class="timelineEntry ${alignment}Aligned" style="top: ${offset}px">
+        <div class="timelineEntry ${alignment}Aligned" style="top: ${offset}px; background-color: ${dotColor};">
             <div class="timelineEntryContainer ${alignment}AlignedEntry">
-                <div class="horizontalLine">
+                <div class="horizontalLine" style="background-color: ${lineColor};">
                     <div class="projectName ${alignment}AlignedText">${projectName}</div>
                     <div class="dateCreated ${alignment}AlignedText">${dateCreated}</div>
                 </div>

@@ -14,7 +14,6 @@ body {
     width: 250%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background-color: cadetblue;
     margin-left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -39,18 +38,18 @@ body {
 .projectName {
     position: absolute;
     font-size: 2vw;
-    color: white;
     display: inline-block;
     white-space: nowrap;
+    color: white;
     bottom: 2.5vw;
 }
 
 .dateCreated{
     position: absolute;
     font-size: 1.5vw;
-    color: white;
     display: inline-block;
     white-space: nowrap;
+    color: white;
     top: -1.5vw;
 }
 
@@ -59,7 +58,6 @@ body {
     transform: translateY(-50%);
     top: 50%;
     height: 25%;
-    background-color: cadetblue;
     border-radius: 10px;
     text-align: justify;
 }
@@ -100,6 +98,26 @@ body {
     animation-fill-mode: forwards;
     animation-direction: reverse;
     animation-timing-function: ease-in;
+}
+
+#nowTextContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+#nowTitle {
+    font-size: 1.5vw;
+    color: grey;
+    text-align: center;
+}
+
+#nowDate {
+    font-size: 1vw;
+    color: grey;
+    text-align: center;
 }
 
 @keyframes showRightElement {
