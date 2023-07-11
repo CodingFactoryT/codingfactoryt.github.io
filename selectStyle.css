@@ -1,0 +1,51 @@
+.selectButton {
+    position: absolute;
+    height: 20vh;
+    aspect-ratio: 1/1;
+    background-color: var(--selectButtonbackgroundColor);
+    color: white;
+    border-radius: 15%;
+    font-size: 3.5vh;
+    opacity: 0;
+    border-color: #5A8984;
+    border-width: 10px;
+    border-style: solid;
+}
+
+#contactButton {
+    animation: 1s contactButtonMovement;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+#projectTimelineButton {
+    animation: 1s projectTimelineButtonMovement;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes projectTimelineButtonMovement {
+    from{
+        margin-bottom: 0vh;
+        margin-right: 0vw;
+        opacity: 0;
+    }   
+    to{
+        margin-bottom: 50vh;
+        margin-right: 20vw;
+        opacity: 1;
+    } 
+}
+
+@keyframes contactButtonMovement {
+    from{
+        margin-top: 0vh;
+        margin-left: 0vw;
+        opacity: 0;
+    }   
+    to{
+        margin-top: 50vh;
+        margin-left: 20vw;
+        opacity: 1;
+    } 
+}

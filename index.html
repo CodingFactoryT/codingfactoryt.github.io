@@ -6,7 +6,8 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
     <title>CodingFactoryT</title>
     <link rel="stylesheet" type="text/css" href="variables.css">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="logoStyle.css" />
+    <link rel="stylesheet" type="text/css" href="selectStyle.css" />
 </head>
 <body>
     <script src="script.js"></script>
@@ -17,11 +18,11 @@
         <button class="redirectButton" type="button" onclick="contactButton_Clicked()">Contact</button>
         <button class="redirectButton" type="button" onclick="projectsButton_Clicked()">Projects</button>
     </div>
-    -->
-    <button onclick="projectTimeline_Clicked()">Project Timeline</button>
-    <button onclick="contactButton_Clicked()">Contact</button>
+-->
 
-    <div id="logoContainer">
+<div id="container">
+        <button onclick="projectTimeline_Clicked()" id="projectTimelineButton" class="selectButton">Project Timeline</button>
+        <button onclick="contactButton_Clicked()" id="contactButton" class="selectButton">Contact</button>
         <a id="logoText" href="https://github.com/CodingFactoryT">CodingFactoryT</a>
         <img id="logoLeftArrowImage" src="assets/logoLeftArrow.png" />
         <img id="logoRightArrowImage" src="assets/logoRightArrow.png" />
