@@ -1,4 +1,4 @@
-const PIXELS_PER_DAY = 5;
+const PIXELS_PER_DAY = 3;
 const CURRENT_DATE_PROJECT_NAME = "CURRENT_DATE";
 
 const timeline = document.getElementById("timeline");
@@ -12,13 +12,21 @@ window.onload = async function () {
 
 	let alignment = "right";
 
+	let index = 0;
+	const VERTICAL_OFFSET = 20;
+	let offsetToTop = 0;
+
 	repoMap.forEach((value, key) => {
-		appendProjectToTimeline(key, value[1], getPixelDistanceToStartingDate(value[0]), alignment);
+		const margin = window.screen.height * 0.05 * index;
+		offsetToTop = getPixelDistanceToStartingDate(value[0]) + margin + VERTICAL_OFFSET;
+
+		appendProjectToTimeline(key, value[1], offsetToTop, alignment);
 		if (alignment === "right") {
 			alignment = "left";
 		} else {
 			alignment = "right";
 		}
+		index++;
 	});
 
 	const appearOptions = {
@@ -50,9 +58,7 @@ window.onload = async function () {
 		element.style.opacity = 1;
 	});
 
-	const timelineHeight = getPixelDistanceToStartingDate(currentDate, PIXELS_PER_DAY);
-	timeline.style.height = timelineHeight + "px";
-	console.log(timeline.offsetHeight);
+	timeline.style.height = offsetToTop + "px";
 };
 
 function fetchSortedRepositories() {
