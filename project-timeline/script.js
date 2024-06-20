@@ -7,10 +7,7 @@ window.onload = async function () {
 	const currentDate = new Date();
 	document.getElementById("currentDate").textContent = formatDate(currentDate);
 
-	const timelineHeight = getPixelDistanceToStartingDate(currentDate, PIXELS_PER_DAY) * 1.5;
-	timeline.style.height = timelineHeight + "px";
 	const repoMap = await fetchSortedRepositories();
-
 	repoMap.set(CURRENT_DATE_PROJECT_NAME, [currentDate, ""]);
 
 	let alignment = "right";
@@ -28,7 +25,7 @@ window.onload = async function () {
 		rootMargin: "-75px 0px -75px 0px",
 	};
 
-	const timelineEntryObserver = new IntersectionObserver((entries) => {
+	/* const timelineEntryObserver = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			let alignment = "right";
 			if (entry.target.classList.contains("leftAligned")) {
@@ -42,15 +39,20 @@ window.onload = async function () {
 			}
 		});
 	}, appearOptions);
-
+*/
 	const elements = document.querySelectorAll(".timelineEntry");
 	elements.forEach((element, index) => {
-		if (index === elements.length - 1) {
+		/* if (index === elements.length - 1) {
 			element.style.opacity = 1;
 		} else {
 			timelineEntryObserver.observe(element);
-		}
+		} */
+		element.style.opacity = 1;
 	});
+
+	const timelineHeight = getPixelDistanceToStartingDate(currentDate, PIXELS_PER_DAY);
+	timeline.style.height = timelineHeight + "px";
+	console.log(timeline.offsetHeight);
 };
 
 function fetchSortedRepositories() {
