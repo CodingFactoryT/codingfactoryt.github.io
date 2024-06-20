@@ -100,7 +100,7 @@ body {
     animation-timing-function: ease-in;
 }
 
-#nowTextContainer {
+#currentDateContainer {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -108,13 +108,13 @@ body {
     margin-bottom: 100px;
 }
 
-#nowTitle {
+#currentDateTitle {
     font-size: 1.5vw;
     color: grey;
     text-align: center;
 }
 
-#nowDate {
+#currentDate {
     font-size: 1vw;
     color: grey;
     text-align: center;
