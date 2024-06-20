@@ -13,7 +13,7 @@ window.onload = async function () {
 	let alignment = "right";
 
 	let index = 0;
-	const VERTICAL_OFFSET = 20;
+	const VERTICAL_OFFSET = 70;
 	let offsetToTop = 0;
 
 	repoMap.forEach((value, key) => {
@@ -29,11 +29,7 @@ window.onload = async function () {
 		index++;
 	});
 
-	const appearOptions = {
-		rootMargin: "-75px 0px -75px 0px",
-	};
-
-	/* const timelineEntryObserver = new IntersectionObserver((entries) => {
+	const timelineEntryObserver = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			let alignment = "right";
 			if (entry.target.classList.contains("leftAligned")) {
@@ -46,16 +42,16 @@ window.onload = async function () {
 				entry.target.classList.remove(`${alignment}ElementShown`); //hide the element
 			}
 		});
-	}, appearOptions);
-*/
+	});
+
 	const elements = document.querySelectorAll(".timelineEntry");
 	elements.forEach((element, index) => {
-		/* if (index === elements.length - 1) {
+		if (index === elements.length - 1) {
 			element.style.opacity = 1;
+			element.style.margin = "2% 0";
 		} else {
 			timelineEntryObserver.observe(element);
-		} */
-		element.style.opacity = 1;
+		}
 	});
 
 	timeline.style.height = offsetToTop + "px";
