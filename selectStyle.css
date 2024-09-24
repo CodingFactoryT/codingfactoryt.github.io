@@ -1,11 +1,11 @@
 .selectButton {
     position: absolute;
-    height: 20vh;
+    height: 15vh;
     aspect-ratio: 1/1;
     background-color: var(--selectButtonbackgroundColor);
     color: white;
     border-radius: 15%;
-    font-size: 3.5vh;
+    font-size: 3vh;
     opacity: 0;
     border-color: #47615e;
     border-width: 5px;
