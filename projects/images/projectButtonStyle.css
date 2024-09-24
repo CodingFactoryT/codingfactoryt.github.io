@@ -1,0 +1,7 @@
+.projectButton{
+    display:flex;
+    width: auto;
+    aspect-ratio: 1;
+    border-radius: 5%;
+    overflow: hidden;
+}

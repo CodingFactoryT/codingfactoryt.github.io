@@ -1,0 +1,15 @@
+const projectMap = new Map();
+projectMap.set("SP-Vertretungsplan", { iconPath: "../../assets/projectImages/SP-Vertretungsplan/Icon.png", imagesFolderPath: null });
+projectMap.set("PDF-Rotator", { iconPath: "../../assets/projectImages/PDF-Rotator/Icon.png", imagesFolderPath: null });
+projectMap.set("Abiturrechner", { iconPath: "../../assets/projectImages/Abiturrechner/Icon.png", imagesFolderPath: null });
+projectMap.set("Planet-Jumper", { iconPath: "../../assets/projectImages/Planet-Jumper/Icon.png", imagesFolderPath: null });
+projectMap.set("Barcode-Generator", { iconPath: "../../assets/projectImages/Barcode-Generator/Icon.png", imagesFolderPath: null });
+projectMap.set("LeetCode", { iconPath: "../../assets/projectImages/LeetCode/Icon.png", imagesFolderPath: null });
+projectMap.set("Advent-of-Code", { iconPath: "../../assets/projectImages/Advent-of-Code/Icon.png", imagesFolderPath: null });
+projectMap.set("Geo-Image-Viewer", { iconPath: "../../assets/projectImages/Geo-Image-Viewer/Icon.png", imagesFolderPath: null });
+projectMap.set("Arduino-Mechanum-Wheel-Car", { iconPath: "../../assets/projectImages/Arduino-Mechanum-Wheel-Car/Icon.png", imagesFolderPath: null });
+projectMap.set("Visual-Algorithm-Sorter", { iconPath: "../../assets/projectImages/Visual-Algorithm-Sorter/Icon.png", imagesFolderPath: null });
+projectMap.set("Arduino-Word-Clock", { iconPath: "../../assets/projectImages/Arduino-Word-Clock/Icon.png", imagesFolderPath: null });
+projectMap.set("CodingFactoryT", { iconPath: "../../assets/projectImages/CodingFactoryT/Icon.png", imagesFolderPath: null });
+projectMap.set("deej", { iconPath: "../../assets/projectImages/deej/Icon.png", imagesFolderPath: null });
+projectMap.set("Project-Line-Counter", { iconPath: "../../assets/projectImages/Project-Line-Counter/Icon.png", imagesFolderPath: null });

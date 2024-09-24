@@ -7,10 +7,11 @@
     border-radius: 15%;
     font-size: 3.5vh;
     opacity: 0;
-    border-color: #5A8984;
-    border-width: 10px;
+    border-color: #47615e;
+    border-width: 5px;
     border-style: solid;
 }
+
 
 #contactButton {
     animation: 1s contactButtonMovement;
@@ -23,6 +24,13 @@
     animation-fill-mode: forwards;
     animation-delay: 1s;
 }
+
+#projectImagesButton {
+    animation: 1s projectImagesButtonMovement;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
 
 @keyframes projectTimelineButtonMovement {
     from{
@@ -45,6 +53,19 @@
     }   
     to{
         margin-top: 50vh;
+        margin-left: 20vw;
+        opacity: 1;
+    } 
+}
+
+@keyframes projectImagesButtonMovement {
+    from{
+        margin-top: 0vh;
+        margin-left: 0vw;
+        opacity: 0;
+    }   
+    to{
+        margin-top: -50vh;
         margin-left: 20vw;
         opacity: 1;
     } 

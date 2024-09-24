@@ -1,16 +1,15 @@
-function aboutmeButton_Clicked(){
-    location.assign('./aboutme/');
+function aboutmeButton_Clicked() {
+	location.assign("./aboutme/");
 }
 
-function contactButton_Clicked(){
-    location.assign('./contact/');
+function contactButton_Clicked() {
+	location.assign("./contact/");
 }
 
-function projectsButton_Clicked(){
-    location.assign('./projects/');
+function projectImagesButton_Clicked() {
+	location.assign("./projects/images/");
 }
 
-function projectTimeline_Clicked(){
-    location.assign('./project-timeline/');
-    console.log("Clicked");
+function projectTimeline_Clicked() {
+	location.assign("./projects/timeline/");
 }

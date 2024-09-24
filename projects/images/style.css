@@ -1,0 +1,21 @@
+body {
+    background-color: var(--backgroundColor);
+}
+
+#projectContainer {
+    margin: 10%;
+    display: grid;
+    grid-gap: 20px;
+}
+
+@media (orientation: landscape) {
+    #projectContainer {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+@media (orientation: portrait) {
+    #projectContainer {
+        grid-template-columns: auto auto;
+    }
+}
