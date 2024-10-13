@@ -30,9 +30,9 @@ async function addProjectsToView(projects) {
 
 function addProjectToView(projectName, projectLink, projectIconPath, projectImagesFolderPath) {
 	projectContainer.innerHTML += `
-        <div class="projectButton">
+        <button onclick="window.location='${projectLink}'" class="projectButton">
             <img class="projectIcon" src="${projectIconPath}" "alt="${projectName}-Image"
-        </div>
+        </button>
     `;
 }
 
