@@ -21,13 +21,13 @@ body {
 }
 
 #emailContactButton{
-    background-image: url(../assets/email.png);
+    background-image: url(../../resources/images/email.png);
     animation: fromLeft 1s;
     animation-fill-mode: forwards;
 }
 
 #discordContactButton{
-    background-image: url(../assets/discord.png);
+    background-image: url(../../resources/images/discord.png);
     animation: fromRight 1s;
     animation-delay: 0.3s;
     animation-fill-mode: forwards;

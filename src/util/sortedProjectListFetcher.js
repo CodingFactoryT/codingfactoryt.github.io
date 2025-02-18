@@ -1,4 +1,6 @@
-function fetchSortedRepositories() {
+import formatDate from "./formatDate.js";
+
+export default function fetchSortedRepositories() {
 	const repoMap = new Map();
 
 	const request = new XMLHttpRequest();
@@ -22,14 +24,4 @@ function fetchSortedRepositories() {
 		};
 		request.send();
 	});
-}
-
-function formatDate(date) {
-	return date
-		.toLocaleString("default", {
-			day: "2-digit",
-			month: "2-digit",
-			year: "numeric",
-		})
-		.replace("/,/g", ".");
 }

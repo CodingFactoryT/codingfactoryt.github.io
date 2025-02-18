@@ -1,3 +1,6 @@
+import formatDate from "../../util/formatDate.js";
+import fetchSortedRepositories from "../../util/sortedProjectListFetcher";
+
 const PIXELS_PER_DAY = 3;
 const CURRENT_DATE_PROJECT_NAME = "CURRENT_DATE";
 
