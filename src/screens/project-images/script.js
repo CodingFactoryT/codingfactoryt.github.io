@@ -1,39 +1,21 @@
-const NO_IMAGE_SRC = "../../assets/projectImages/NO_IMAGE_ICON.png";
-const projectContainer = document.getElementById("projectContainer");
+import fetchSortedRepositories from "../../util/sortedProjectListFetcher.js";
+import projectMap from "./projectMap.js";
 
-const projects = fetchSortedProjectMap(projectMap).then((projects) => {
-	addProjectsToView(projects);
-});
+const NO_IMAGE_SRC = require("../../resources/images/projectImages/NO_IMAGE_ICON.png");
 
-async function fetchSortedProjectMap() {
+export default async function fetchSortedProjectMap() {
 	const projects = [];
 
 	const repoMap = await fetchSortedRepositories();
 	repoMap.forEach((value, repoName) => {
 		const repoLink = `https://github.com/CodingFactoryT/${repoName}`;
-		const iconPath = projectMap.get(repoName) ? projectMap.get(repoName).iconPath : NO_IMAGE_SRC;
-		const imagesFolderPath = projectMap.get(repoName) ? projectMap.get(repoName).imagesFolderPath : "NO IMAGES AVAILABLE";
-
-		projects.push({ name: repoName, link: repoLink, iconPath: iconPath, imagesFolderPath: imagesFolderPath });
+		const icon = projectMap.get(repoName) ? projectMap.get(repoName).icon : NO_IMAGE_SRC;
+		projects.push({ name: repoName, link: repoLink, icon: icon });
 	});
 
 	projects.sort((a, b) => compareProjectNames(a, b));
-	console.log(projects);
+
 	return projects;
-}
-
-async function addProjectsToView(projects) {
-	projects.forEach((project) => {
-		addProjectToView(project.name, project.link, project.iconPath, project.imagesFolderPath);
-	});
-}
-
-function addProjectToView(projectName, projectLink, projectIconPath, projectImagesFolderPath) {
-	projectContainer.innerHTML += `
-        <button onclick="window.location='${projectLink}'" class="projectButton">
-            <img class="projectIcon" src="${projectIconPath}" "alt="${projectName}-Image"
-        </button>
-    `;
 }
 
 function compareProjectNames(projectA, projectB) {
