@@ -25,6 +25,7 @@ export default function HomePageScreen() {
         <>
             <title>CodingFactoryT</title>
             <script src="script.js"></script>
+            <p>This website is currently migrated to a framework, so some functions could be broken!</p>
             <div id="container">
                 <button onClick={handleTimelineRedirect} id="projectTimelineButton" class="selectButton">Project Timeline</button>
                 <button onClick={handleContactRedirect} id="contactButton" class="selectButton">Contact</button>
