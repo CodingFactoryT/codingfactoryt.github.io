@@ -7,6 +7,7 @@ body {
     width: 1%;
     background: linear-gradient(66deg, rgba(5,109,187,1) 0%, rgba(0,212,255,1) 100%);;
     border-radius: 10px;
+    height: 10000px;
 }
 
 .timelineEntry {
@@ -15,8 +16,8 @@ body {
     margin-left: 0.5%;
     aspect-ratio: 1 / 1;
     border-radius: 30%;
-    opacity: 0; 
-    transform: translateX(-25%);
+    /*opacity: 0; */
+    transform: translateX(-50%);
 }
 
 .timelineEntryContainer {

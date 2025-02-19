@@ -1,14 +1,13 @@
 import formatDate from "../../util/formatDate.js";
 import fetchSortedRepositories from "../../util/sortedProjectListFetcher";
 
-const PIXELS_PER_DAY = 3;
+const PIXELS_PER_DAY = 2;
 const CURRENT_DATE_PROJECT_NAME = "CURRENT_DATE";
 
-const timeline = document.getElementById("timeline");
-
-window.onload = async function () {
+export default async function getTimelineEntries() {
+	const timelineEntries = [];
 	const currentDate = new Date();
-	document.getElementById("currentDate").textContent = formatDate(currentDate);
+	document.getElementById("currentDate").textContent = formatDate(currentDate); //TODO why does this work?
 
 	const repoMap = await fetchSortedRepositories();
 	repoMap.set(CURRENT_DATE_PROJECT_NAME, [currentDate, ""]);
@@ -22,7 +21,9 @@ window.onload = async function () {
 		const margin = window.screen.height * 0.05 * index;
 		offsetToTop = getPixelDistanceToStartingDate(value[0]) + margin + VERTICAL_OFFSET;
 
-		appendProjectToTimeline(key, value[1], offsetToTop, alignment);
+		const projectName = key;
+		const dateCreated = value[1];
+		timelineEntries.push({ projectName, dateCreated, alignment, offsetToTop, ...getColors(projectName) }); //projectName, dateCreated, alignment, offset, dotColor, lineColor
 		if (alignment === "right") {
 			alignment = "left";
 		} else {
@@ -31,7 +32,7 @@ window.onload = async function () {
 		index++;
 	});
 
-	const timelineEntryObserver = new IntersectionObserver((entries) => {
+	/* const timelineEntryObserver = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			let alignment = "right";
 			if (entry.target.classList.contains("leftAligned")) {
@@ -44,9 +45,9 @@ window.onload = async function () {
 				entry.target.classList.remove(`${alignment}ElementShown`); //hide the element
 			}
 		});
-	});
+	}); */
 
-	const elements = document.querySelectorAll(".timelineEntry");
+	/* const elements = document.querySelectorAll(".timelineEntry");
 	elements.forEach((element, index) => {
 		if (index === elements.length - 1) {
 			element.style.opacity = 1;
@@ -54,10 +55,10 @@ window.onload = async function () {
 		} else {
 			timelineEntryObserver.observe(element);
 		}
-	});
+	}); */
 
-	timeline.style.height = offsetToTop + "px";
-};
+	return { timelineEntries, offsetToTop };
+}
 
 function getPixelDistanceToStartingDate(date) {
 	const startingDate = new Date(Date.UTC(2022, 0, 1));
@@ -73,7 +74,7 @@ function getPixelDistanceToStartingDate(date) {
 	return diffInDays * PIXELS_PER_DAY;
 }
 
-function appendProjectToTimeline(projectName, dateCreated, offset, alignment) {
+function getColors(projectName) {
 	//class right-/leftAligned is only for the js script and is not used to style anything
 	let lineColor = "cadetblue";
 	let dotColor = "cadetblue";
@@ -84,14 +85,5 @@ function appendProjectToTimeline(projectName, dateCreated, offset, alignment) {
 		dotColor = "rgba(5,109,187,1)";
 	}
 
-	timeline.innerHTML += `
-        <div class="timelineEntry ${alignment}Aligned" style="top: ${offset}px; background-color: ${dotColor};">
-            <div class="timelineEntryContainer ${alignment}AlignedEntry">
-                <div class="horizontalLine" style="background-color: ${lineColor};">
-                    <div class="projectName ${alignment}AlignedText">${projectName}</div>
-                    <div class="dateCreated ${alignment}AlignedText">${dateCreated}</div>
-                </div>
-            </div>
-        </div>
-    `;
+	return { dotColor, lineColor };
 }
