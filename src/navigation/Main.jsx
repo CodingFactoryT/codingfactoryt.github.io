@@ -6,16 +6,20 @@ import ProjectTimelineScreen from "../screens/project-timeline/ProjectTimelineSc
 import NotFoundScreen from "../screens/notfound/NotFoundScreen";
 import ContactScreen from "../screens/contact/ContactScreen";
 import ProjectImagesScreen from "../screens/project-images/ProjectImagesScreen";
+import PilotChessWriteup from "../screens/writeups/PilotChess-Automatic-Chess-Board"
 
 export default function Main() {
     return (
         <HashRouter>
             <Routes>
-                <Route path ="/" element={<HomePageScreen/>}/>
-                <Route path ="/project-timeline" element={<ProjectTimelineScreen/>}/>
-                <Route path ="/project-images" element={<ProjectImagesScreen/>}/>
-                <Route path ="/contact" element={<ContactScreen/>}/>
-                <Route path ="/datenschutz" element={<DatenschutzScreen/>}/>
+                <Route path ="/" element={<HomePageScreen/>} />
+                <Route path ="project-timeline" element={<ProjectTimelineScreen/>} />
+                <Route path ="project-images" element={<ProjectImagesScreen/>} />
+                <Route path ="contact" element={<ContactScreen/>} />
+                <Route path ="datenschutz" element={<DatenschutzScreen/>} />
+                <Route path="writeups">
+                    <Route path="PilotChess" element={<PilotChessWriteup/>} />
+                </Route>
                 <Route path="*" element={<NotFoundScreen />} />
             </Routes>
         </HashRouter>

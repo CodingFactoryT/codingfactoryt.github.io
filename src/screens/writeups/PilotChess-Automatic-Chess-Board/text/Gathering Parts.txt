@@ -1,0 +1,3 @@
+Although it cost me much time and effort to model each part individually, it was worth it: Once I was to determined that i had the model of the prototype with the final dimensions finished, it was time to go to the local hardware store to buy the wood for the frame. As I only have a jigsaw and I wanted the parts to be perfectly straight on the edges, I chose one which offered a "Cutting to dimension" service for free.   
+
+The first part was done, so now I had to gather the electronic components. That was pretty easy, as I already had most of them laying around. The only parts I had to buy for now were the hall sensors, which I got for cheap on the internet.
