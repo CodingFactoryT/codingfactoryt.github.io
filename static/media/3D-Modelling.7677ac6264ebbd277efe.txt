@@ -1,1 +1,0 @@
-PilotChess is the first project I decided to completely model in Fusion360 beforehand, so I can determine exactly where each component is located. As it later turned out, that was a brilliant idea, and the main assembly was quickly done in a few hours.
