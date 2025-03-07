@@ -1,16 +1,6 @@
-import React from 'react';
-import { MDXProvider } from '@mdx-js/react';
-import Content from './index.mdx';
+/* eslint-disable import/no-webpack-loader-syntax */
+import Content from '!@mdx-js/loader!./content.mdx'
 
-const App = () => {
-  return (
-    <MDXProvider>
-      <div>
-        <h1>React with MDX</h1>
-        <Content />
-      </div>
-    </MDXProvider>
-  );
-};
-
-export default App;
+export default function PilotChessWriteup() {
+  return <Content/>
+}
