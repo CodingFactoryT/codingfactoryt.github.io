@@ -2,7 +2,7 @@ import ImageProvider from "../../../components/ImageProvider";
 import { FaClockRotateLeft } from "react-icons/fa6"
 import { BiCalendarEdit } from "react-icons/bi";
 
-export default function WriteupTitle({ title, projectName, dateCreated }) {
+export default function WriteupTitle({ title, projectName, dateCreated, dateModified }) {
 	const height = "clamp(3rem, 6vw, 5rem)";
 
 	return (
@@ -35,7 +35,7 @@ export default function WriteupTitle({ title, projectName, dateCreated }) {
 				}}>
 					<div style={{display: "flex", justifyContent: "space-between", gap: "5px"}}>
 						<div><FaClockRotateLeft/></div>
-						<div>{getFormattedTodayDate()}</div>
+						<div>{dateModified}</div>
 					</div>
 					<div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginRight: "20px", gap: "5px"}}>
 						<div><BiCalendarEdit size="1.3em"/></div>
@@ -46,13 +46,4 @@ export default function WriteupTitle({ title, projectName, dateCreated }) {
 			</div>
 		</div>
 	);
-}
-
-function getFormattedTodayDate() {
-	const today = new Date();
-	return new Intl.DateTimeFormat('de-DE', {
-		year: 'numeric',
-		month: '2-digit',
-		day: '2-digit',
-	}).format(today);
 }
