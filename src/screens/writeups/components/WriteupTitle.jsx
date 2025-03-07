@@ -3,7 +3,7 @@ import { FaClockRotateLeft } from "react-icons/fa6"
 import { BiCalendarEdit } from "react-icons/bi";
 
 export default function WriteupTitle({ title, projectName, dateCreated }) {
-	const height = "5rem"
+	const height = "clamp(3rem, 6vw, 5rem)";
 
 	return (
 		<div style={{ 
