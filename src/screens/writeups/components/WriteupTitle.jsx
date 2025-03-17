@@ -11,7 +11,7 @@ export default function WriteupTitle({ title, projectName, dateCreated, dateModi
 			alignItems: "center",
 			height: height,
 			gap: "10px",
-			marginBottom: "170px",
+			marginBottom: "50px",
 		}}>
 			<ImageProvider projectName={projectName} imageName={"Icon"} style={{height: "100%", borderRadius: "10px", aspectRatio: "1"}} />
 			<div
