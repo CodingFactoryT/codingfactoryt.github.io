@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import WriteupGithubLink from "../components/WriteupGithubLink";
-import WriteupTitle from "../components/WriteupTitle";
+import WriteupGithubLink from "./WriteupGithubLink";
+import WriteupTitle from "./WriteupTitle";
 
 export default function WriteupLayout({ title, dateCreated, dateModified, githubLink, children }) {
   const [isPortrait, setIsPortrait] = useState(window.matchMedia("(orientation: portrait)").matches);

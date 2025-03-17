@@ -1,7 +1,7 @@
 // src/components/MDXPost.js
 import React from 'react';
 import Content, {title, dateCreated, dateModified } from './content.mdx';
-import WriteupLayout from '../mdx-components/WriteupLayout';
+import WriteupLayout from '../components/WriteupLayout';
 
 export default function PilotChessWriteup() {  
   return (
