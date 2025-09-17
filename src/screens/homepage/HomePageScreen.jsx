@@ -23,7 +23,7 @@ export default function HomePageScreen() {
 
     return (
         <>
-            <title>CodingFactoryT</title>
+            <title>TimBslr</title>
             <script src="script.js"></script>
             <div id="container">
                 <button onClick={handleTimelineRedirect} id="projectTimelineButton" class="selectButton">Project Timeline</button>
