@@ -31,7 +31,7 @@ body{
 #logoText::before{
     content: '';
     position: absolute;
-    width: 100%;
+    width: 110%;
     height: 100%;
     left: 0%;
     background-color: var(--backgroundColor);
@@ -80,7 +80,7 @@ body{
             right: 1%;
         }
         100%{
-            right: 14%;
+            right: 7%;
         }
     }
     
@@ -95,7 +95,7 @@ body{
             left: 1%;
         }
         100%{
-            left: 14%;
+            left: 7%;
         }
     }
     
@@ -104,7 +104,7 @@ body{
             left: 50%;
         }   
         to{
-            left: 37.5%;
+            left: 43.7%;
         } 
     }
 }
@@ -129,7 +129,7 @@ body{
             right: 1%;
         }
         100%{
-            right: 37%;
+            right: 20%;
         }
     }
     
@@ -144,7 +144,7 @@ body{
             left: 1%;
         }
         100%{
-            left: 37%;
+            left: 20%;
         }
     }
     
