@@ -5,7 +5,7 @@ import WriteupLayout from '../components/WriteupLayout';
 
 export default function PilotChessWriteup() {  
   return (
-    <WriteupLayout title={title} dateCreated={dateCreated} dateModified={dateModified} githubLink={"https://github.com/CodingFactoryT/PilotChess-Automatic-Chess-Board"}>
+    <WriteupLayout title={title} dateCreated={dateCreated} dateModified={dateModified} githubLink={"https://github.com/timbslr/PilotChess-Automatic-Chess-Board"}>
       <Content/>
     </WriteupLayout>
   );

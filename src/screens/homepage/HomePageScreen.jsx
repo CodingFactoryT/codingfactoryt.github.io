@@ -29,9 +29,9 @@ export default function HomePageScreen() {
                 <button onClick={handleTimelineRedirect} id="projectTimelineButton" class="selectButton">Project Timeline</button>
                 <button onClick={handleContactRedirect} id="contactButton" class="selectButton">Contact</button>
                 <button onClick={handleProjectImagesRedirect} id="projectImagesButton" class="selectButton">Project Images</button>
-                <a id="logoText" href="https://github.com/CodingFactoryT">Tim Bslr</a>
-                <img id="logoLeftArrowImage" src={logoLeftArrow} alt="Left side of the CodingFactoryT logo"/>
-                <img id="logoRightArrowImage" src={logoRightArrow} alt="Right side of the CodingFactoryT logo"/>
+                <a id="logoText" href="https://github.com/timbslr">Tim Bslr</a>
+                <img id="logoLeftArrowImage" src={logoLeftArrow} alt="Left side of the TimBslr logo"/>
+                <img id="logoRightArrowImage" src={logoRightArrow} alt="Right side of the TimBslr logo"/>
             </div>
         </>
     );

@@ -8,7 +8,7 @@ export default async function fetchSortedProjectMap() {
 
 	const repoMap = await fetchSortedRepositories();
 	repoMap.forEach((value, repoName) => {
-		const repoLink = `https://github.com/CodingFactoryT/${repoName}`;
+		const repoLink = `https://github.com/timbslr/${repoName}`;
 		const icon = projectMap.get(repoName) ? projectMap.get(repoName).icon : NO_IMAGE_SRC;
 		projects.push({ name: repoName, link: repoLink, icon: icon });
 	});

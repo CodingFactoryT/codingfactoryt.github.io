@@ -4,7 +4,7 @@ export default function fetchSortedRepositories() {
 	const repoMap = new Map();
 
 	const request = new XMLHttpRequest();
-	const url = "https://api.github.com/users/CodingFactoryT/repos?sort=created&direction=asc"; //url for fething all public repositories, sorted by created_at
+	const url = "https://api.github.com/users/timbslr/repos?sort=created&direction=asc"; //url for fething all public repositories, sorted by created_at
 
 	return new Promise((resolve, reject) => {
 		request.open("GET", url, true);

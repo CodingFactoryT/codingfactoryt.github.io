@@ -10,7 +10,7 @@ projectMap.set("Geo-Image-Viewer", { icon: require("../../resources/images/proje
 projectMap.set("Arduino-Mechanum-Wheel-Car", { icon: require("../../resources/images/projectImages/Arduino-Mechanum-Wheel-Car/Icon.png") });
 projectMap.set("Visual-Algorithm-Sorter", { icon: require("../../resources/images/projectImages/Visual-Algorithm-Sorter/Icon.png") });
 projectMap.set("Arduino-Word-Clock", { icon: require("../../resources/images/projectImages/Arduino-Word-Clock/Icon.png") });
-projectMap.set("CodingFactoryT", { icon: require("../../resources/images/projectImages/CodingFactoryT/Icon.png") });
+projectMap.set("timbslr", { icon: require("../../resources/images/projectImages/timbslr/Icon.png") });
 projectMap.set("deej", { icon: require("../../resources/images/projectImages/deej/Icon.png") });
 projectMap.set("Project-Line-Counter", { icon: require("../../resources/images/projectImages/Project-Line-Counter/Icon.png") });
 
