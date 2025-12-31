@@ -13,5 +13,6 @@ projectMap.set("Arduino-Word-Clock", { icon: require("../../resources/images/pro
 projectMap.set("timbslr", { icon: require("../../resources/images/projectImages/timbslr/Icon.png") });
 projectMap.set("deej", { icon: require("../../resources/images/projectImages/deej/Icon.png") });
 projectMap.set("Project-Line-Counter", { icon: require("../../resources/images/projectImages/Project-Line-Counter/Icon.png") });
+projectMap.set("8-Bit-Breadboard-Computer", { icon: require("../../resources/images/projectImages/8-Bit-Breadboard-Computer/Icon.png") });
 
 export default projectMap;

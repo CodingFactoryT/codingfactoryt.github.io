@@ -5,17 +5,39 @@ const NO_IMAGE_SRC = require("../../resources/images/projectImages/NO_IMAGE_ICON
 
 export default async function fetchSortedProjectMap() {
 	const projects = [];
-
 	const repoMap = await fetchSortedRepositories();
-	repoMap.forEach((value, repoName) => {
-		const repoLink = `https://github.com/timbslr/${repoName}`;
-		const icon = projectMap.get(repoName) ? projectMap.get(repoName).icon : NO_IMAGE_SRC;
-		projects.push({ name: repoName, link: repoLink, icon: icon });
+
+	const linkPromises = Array.from(repoMap.keys()).map((repoName) => resolveProjectLink(repoName));
+	const resolvedLinks = await Promise.all(linkPromises);
+
+	Array.from(repoMap.entries()).forEach(([repoName, repoData], index) => {
+		const icon = projectMap.get(repoName)?.icon ?? NO_IMAGE_SRC;
+		projects.push({
+			name: repoName,
+			link: resolvedLinks[index],
+			icon,
+		});
 	});
 
 	projects.sort((a, b) => compareProjectNames(a, b));
 
 	return projects;
+}
+
+async function resolveProjectLink(repoName) {
+	const githubPagesURL = `https://timbslr.github.io/${repoName}`;
+	const githubRepoURL = `https://github.com/timbslr/${repoName}`;
+
+	if (repoName === "timbslr.github.io") {
+		return githubRepoURL;
+	}
+
+	try {
+		const response = await fetch(githubPagesURL, { method: "HEAD" }); //send HEAD request to check if github pages site exists for that repository
+		return response.ok ? githubPagesURL : githubRepoURL;
+	} catch (err) {
+		return githubRepoURL;
+	}
 }
 
 function compareProjectNames(projectA, projectB) {
